@@ -53,6 +53,18 @@ resource "aws_route53_record" "w7it_com_txt" {
   ]
 }
 
+resource "aws_route53_record" "www_w7it_com_cname" {
+  zone_id = data.aws_route53_zone.w7it_com.id
+  name    = "www.${local.base_domain}"
+  type    = "CNAME"
+  ttl     = "300"
+
+  # GitHub Pages
+  records = [
+    "w7it.github.io."
+  ]
+}
+
 resource "aws_route53_record" "dkim_w7it_com_cname" {
   zone_id = data.aws_route53_zone.w7it_com.id
   name    = "sig1._domainkey.${local.base_domain}"
