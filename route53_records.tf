@@ -83,10 +83,12 @@ resource "aws_route53_record" "w7it_com_caa" {
   ttl     = "300"
 
   records = [
+    "0 issue \"letsencrypt.org\"",
     "0 issue \"amazon.com\"",
     "0 issue \"amazontrust.com\"",
     "0 issue \"awstrust.com\"",
     "0 issue \"amazonaws.com\"",
+    "0 issuewild \"letsencrypt.org\"",
     "0 issuewild \"amazon.com\"",
     "0 issuewild \"amazontrust.com\"",
     "0 issuewild \"awstrust.com\"",
