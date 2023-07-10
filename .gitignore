@@ -1,0 +1,9 @@
+.terraform/
+*.tfstate*
+
+node_modules/
+tmp/
+
+.DS_Store/
+.vscode/
+.idea/
