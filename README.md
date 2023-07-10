@@ -6,5 +6,6 @@ Organization infrastructure configuration managed by Terraform.
 
 ```bash
 terraform init
+terraform workspace select production
 terraform apply
 ```
