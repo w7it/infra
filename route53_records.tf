@@ -63,3 +63,21 @@ resource "aws_route53_record" "dkim_w7it_com_cname" {
     "sig1.dkim.w7it.com.at.icloudmailadmin.com."
   ]
 }
+
+resource "aws_route53_record" "w7it_com_caa" {
+  zone_id = data.aws_route53_zone.w7it_com.id
+  name    = local.base_domain
+  type    = "CAA"
+  ttl     = "300"
+
+  records = [
+    "0 issue \"amazon.com\"",
+    "0 issue \"amazontrust.com\"",
+    "0 issue \"awstrust.com\"",
+    "0 issue \"amazonaws.com\"",
+    "0 issuewild \"amazon.com\"",
+    "0 issuewild \"amazontrust.com\"",
+    "0 issuewild \"awstrust.com\"",
+    "0 issuewild \"amazonaws.com\"",
+  ]
+}
