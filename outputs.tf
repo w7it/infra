@@ -1,3 +1,8 @@
+output "base_domain" {
+  description = "Base domain for whole organization"
+  value       = local.base_domain
+}
+
 output "db_endpoint" {
   description = "The cluster endpoint"
   value       = aws_db_instance.main.endpoint
