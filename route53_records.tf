@@ -13,20 +13,20 @@ resource "aws_route53_record" "w7it_com_a" {
   ]
 }
 
-resource "aws_route53_record" "w7it_com_aaaa" {
-  zone_id = data.aws_route53_zone.w7it_com.id
-  name    = local.base_domain
-  type    = "AAAA"
-  ttl     = "300"
+# resource "aws_route53_record" "w7it_com_aaaa" {
+#   zone_id = data.aws_route53_zone.w7it_com.id
+#   name    = local.base_domain
+#   type    = "AAAA"
+#   ttl     = "300"
 
-  # GitHub Pages
-  records = [
-    "2606:50c0:8000::153",
-    "2606:50c0:8001::153",
-    "2606:50c0:8002::153",
-    "2606:50c0:8003::153",
-  ]
-}
+#   # GitHub Pages
+#   records = [
+#     "2606:50c0:8000::153",
+#     "2606:50c0:8001::153",
+#     "2606:50c0:8002::153",
+#     "2606:50c0:8003::153",
+#   ]
+# }
 
 resource "aws_route53_record" "w7it_com_mx" {
   zone_id = data.aws_route53_zone.w7it_com.id
