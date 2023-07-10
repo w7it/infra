@@ -27,8 +27,9 @@ output "db_port" {
 output "api_gw" {
   description = "API Gateway ID for DailyVows"
   value = {
-    id            = aws_apigatewayv2_api.dailyvows_api.id
-    execution_arn = aws_apigatewayv2_api.dailyvows_api.execution_arn
-    endpoint      = aws_apigatewayv2_api.dailyvows_api.api_endpoint
+    id               = aws_apigatewayv2_api.dailyvows_api.id
+    execution_arn    = aws_apigatewayv2_api.dailyvows_api.execution_arn
+    endpoint         = aws_apigatewayv2_api.dailyvows_api.api_endpoint
+    custom_domain_id = aws_apigatewayv2_domain_name.dailyvows_api.id
   }
 }

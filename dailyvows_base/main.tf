@@ -17,5 +17,7 @@ data "terraform_remote_state" "main" {
 }
 
 locals {
-  appname = "dailyvows"
+  appname     = "dailyvows"
+  base_domain = data.terraform_remote_state.main.outputs.base_domain
+  domain      = "${local.appname}.${local.base_domain}"
 }
