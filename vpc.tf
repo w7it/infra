@@ -5,7 +5,7 @@ data "aws_vpc" "default" {
 resource "aws_security_group" "rds" {
   description = "Controls access to RDS"
   vpc_id      = data.aws_vpc.default.id
-  name        = "${local.appname}-rds"
+  name        = "w7it-main-rds"
 
   ingress {
     protocol    = "tcp"

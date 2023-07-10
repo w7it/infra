@@ -1,0 +1,25 @@
+output "db_endpoint" {
+  description = "The cluster endpoint"
+  value       = aws_db_instance.main.endpoint
+}
+
+output "db_database_name" {
+  description = "Name of database"
+  value       = aws_db_instance.main.db_name
+}
+
+output "db_master_username" {
+  description = "The master username"
+  value       = aws_db_instance.main.username
+}
+
+output "db_master_password" {
+  description = "The master password"
+  value       = aws_db_instance.main.password
+  sensitive   = true
+}
+
+output "db_port" {
+  description = "The port"
+  value       = aws_db_instance.main.port
+}
