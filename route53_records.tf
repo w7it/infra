@@ -63,3 +63,39 @@ resource "aws_route53_record" "dkim_w7it_com_cname" {
     "sig1.dkim.w7it.com.at.icloudmailadmin.com."
   ]
 }
+
+resource "aws_route53_record" "dailyvows_w7it_com_a" {
+  zone_id = data.aws_route53_zone.w7it_com.id
+  name    = "dailyvows.${local.base_domain}"
+  type    = "A"
+  ttl     = "300"
+
+  # to Deno Deploy
+  records = [
+    "34.120.54.55",
+  ]
+}
+
+resource "aws_route53_record" "dailyvows_w7it_com_aaaa" {
+  zone_id = data.aws_route53_zone.w7it_com.id
+  name    = "dailyvows.${local.base_domain}"
+  type    = "AAAA"
+  ttl     = "300"
+
+  # to Deno Deploy
+  records = [
+    "2600:1901:0:6d85::",
+  ]
+}
+
+resource "aws_route53_record" "acme_dailyvows_w7it_com_cname" {
+  zone_id = data.aws_route53_zone.w7it_com.id
+  name    = "_acme-challenge.dailyvows.${local.base_domain}"
+  type    = "CNAME"
+  ttl     = "300"
+
+  # to Deno Deploy
+  records = [
+    "eea9d9c11e644bb598880218._acme.deno.dev.",
+  ]
+}
