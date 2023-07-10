@@ -28,3 +28,12 @@ output "db_port" {
   description = "The port"
   value       = aws_db_instance.main.port
 }
+
+output "github_ci_access_key" {
+  description = "Access key for GitHub CI"
+  sensitive = true
+  value = {
+    id = aws_iam_access_key.github_ci.id
+    secret = aws_iam_access_key.github_ci.secret
+  }
+}
