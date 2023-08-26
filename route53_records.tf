@@ -49,7 +49,7 @@ resource "aws_route53_record" "w7it_com_txt" {
 
   records = [
     "v=spf1 include:icloud.com ~all",
-    "apple-domain=6HzkRYa23g63sJOy",
+    "google-site-verification=G3yh9Oc7Y8XQaBuVf3AZgnJ2dQnHA6rtSLfKFMhyWKo",
   ]
 }
 
