@@ -34,10 +34,9 @@ resource "aws_route53_record" "w7it_com_mx" {
   type    = "MX"
   ttl     = "300"
 
-  # iCloud Mail
+  # GMail
   records = [
-    "10 mx01.mail.icloud.com.",
-    "10 mx02.mail.icloud.com.",
+    "1 smtp.google.com.",
   ]
 }
 
