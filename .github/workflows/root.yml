@@ -17,6 +17,7 @@ jobs:
 
     env:
       TF_WORKSPACE: production
+      NEON_TOKEN: ${{ secrets.NEON_TOKEN }}
 
     steps:
       - name: 🛎️ Checkout

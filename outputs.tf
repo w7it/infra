@@ -11,3 +11,19 @@ output "github_ci_access_key" {
     secret = aws_iam_access_key.github_ci.secret
   }
 }
+
+output "neon_project" {
+  description = "Neon project access data"
+  sensitive   = true
+  value       = {
+    region_id   = neon_project.main.region_id
+    platform_id = neon_project.main.platform_id
+    project_id  = neon_project.main.id
+    branch_id   = neon_project.main.branch.id
+    endpoint_id = neon_project.main.branch.endpoint.id
+    host        = neon_project.main.branch.endpoint.host
+    host_pool   = replace(neon_project.main.branch.endpoint.host, neon_project.main.branch.endpoint.id, "${neon_project.main.branch.endpoint.id}-pooler")
+    username    = neon_role.root.name
+    password    = neon_role.root.password
+  }
+}
