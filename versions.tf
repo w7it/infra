@@ -3,11 +3,11 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 4.52"
+      version = "~> 4.67"
     }
     neon = {
       source = "terraform-community-providers/neon"
-      version = "~> 0.1.4"
+      version = "~> 0.1.5"
     }
   }
 }

@@ -1,9 +1,10 @@
 resource "neon_project" "main" {
-  name      = "w7it"
-  region_id = "aws-us-east-2"
+  name       = "w7it"
+  region_id  = "aws-us-east-2"
+  pg_version = 16
 
   lifecycle {
-    ignore_changes = [ pg_version, branch ]
+    ignore_changes = [ branch ]
   }
 }
 
