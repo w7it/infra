@@ -27,3 +27,7 @@ output "neon_project" {
     password    = neon_role.root.password
   }
 }
+
+output "cloudflare_account_id" {
+  value = cloudflare_account.default.id
+}

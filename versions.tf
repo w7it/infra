@@ -9,5 +9,9 @@ terraform {
       source = "terraform-community-providers/neon"
       version = "~> 0.1.5"
     }
+    cloudflare = {
+      source  = "cloudflare/cloudflare"
+      version = "~> 4.0"
+    }
   }
 }
